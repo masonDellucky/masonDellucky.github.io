@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bouncing Box</title>
+	<script src="jquery.min.js"></script>
+
+<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+
+	<!-- BEGIN CSS -->
+	<style>
+		/* TODO 1 */
+		[class="box"] {
+			display: block;
+			position: absolute;
+			width: 70px;
+			height: 70px;
+			top: 100px;
+			left: 0px;
+			background-color: teal;
+			font-size: 300%;
+			text-align: center;
+		}
+	</style>
+
+</head>
+<body class="board">
+	<!-- HTML for the box -->
+	<div class="box">?</div>
+
+	<!-- BEGIN JAVASCRIPT -->
+	<script>
+		(function(){
+			'use strict'
+			/* global &*/
+
+			// Variable declarations
+			var box;
+			var boxWidth;
+			var boardWidth;
+			var update;
+			var handleBoxClick;
+			var direction;
+			direction = 1;
+
+			// jQuery stuff setup for you
+			box = $('.box');
+			boardWidth = $('.board').width();
+			boxWidth = $('.box').width();
+
+			// TODO 2
+			var position;
+			var points;
+			var speed;
+			
+			position = 0;
+			points = 0;
+			speed = 2;
+			
+			box.css('left', position);      // changes the 'left' css property of the box to value of var position
+			
+			function update() {
+				// TODO 3 / 6 / 7 / 8
+				box.text(points);               // changes the text of the box to display the value of var points
+				position = position + (speed * direction);
+				if((position + boxWidth) > boardWidth) {
+					direction = -1;
+					points = points - 1;
+					speed = speed - 0.2;
+				}
+				else if(position < 0) {
+					direction = 1;
+					points = points - 1;
+					speed = speed - 0.2;
+				}
+    			box.css('left', position);
+			};
+
+
+			
+			function handleBoxClick() {
+				// TODO 4 / 5
+				points = points + 1;
+				speed = speed + 0.2;
+				direction = direction * -1;
+			};
+
+
+			//this calls update every 50 milliseconds
+			setInterval(update, 10);
+			// this calls the handle handleBoxClick function every time the box is clicked on
+			box.on('click', handleBoxClick);
+		})();
+	</script>
+</body>
+</html>
