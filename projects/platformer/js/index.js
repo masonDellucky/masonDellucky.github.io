@@ -5,6 +5,8 @@ $(document).ready(function () {
     let 
         opspark = window.opspark,
         game = opspark.createGame(create, update);
+        
+        var lives = 3;
 
     function create() {
         game.opspark.init();
@@ -40,6 +42,8 @@ $(document).ready(function () {
     function onProjectileOverlap() {
         console.log('Halle hit!');
         game.player.die();
+        opspark.player.init(game);
+        lives = lives - 1;
     }
     
     function collectDb(player, collectable) {
