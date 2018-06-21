@@ -25,14 +25,16 @@ var init = function (window) {
         particleManager;
     
     var debugHalleHitZones = false;
-
+    
+    window.hud = hud;
     space = app.space;
     rules = app.rules,
     particleManager = opspark.makeParticleManager(app.stage);
     ground = opspark.makeGround(app);
 
     // TODO 2 : add background
-
+    var background = opspark.makeBackground(app,ground);
+    view.addChild(background);
     
     var help = draw.textfield('MOVES || w: jump | e: flying jump | s: duck | space: fire | q your mom!', 
         '20px Arial',
@@ -71,8 +73,8 @@ var init = function (window) {
     }
     
     // TODO 1 : add a heads-up display to game
-
-
+    var hud = opspark.makeHud();
+    view.addChild(hud);
     // TODO 6 : create game manager
 
 
