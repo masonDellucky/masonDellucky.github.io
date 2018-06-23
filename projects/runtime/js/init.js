@@ -76,8 +76,8 @@ var init = function (window) {
     var hud = opspark.makeHud();
     view.addChild(hud);
     // TODO 6 : create game manager
-
-
+    var game = opspark.createGameManager(app,hud);
+    opspark.runLevelInGame(game);
 };
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
