@@ -30,10 +30,12 @@ var level01 = function (window) {
         var damageFromObstacle = 10;
         var myObstacle = game.createObstacle(hitZoneSize,damageFromObstacle);
         myObstacle.x = 400;
-        myObstacle.y = 100;
+        myObstacle.y = 225;
         game.addGameItem(myObstacle);
         var obstacleImage = draw.bitmap('img/sawblade.png');
         myObstacle.addChild(obstacleImage);
+        obstacleImage.x = -25;
+        obstacleImage.y = -25;
 
     }
 };
