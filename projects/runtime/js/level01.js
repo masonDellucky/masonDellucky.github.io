@@ -26,18 +26,35 @@ var level01 = function (window) {
         game.setDebugMode(true);
 
         // BEGIN EDITING YOUR CODE HERE
-        var hitZoneSize = 25;
-        var damageFromObstacle = 10;
-        var myObstacle = game.createObstacle(hitZoneSize,damageFromObstacle);
-        myObstacle.x = 400;
-        myObstacle.y = 225;
-        game.addGameItem(myObstacle);
-        var obstacleImage = draw.bitmap('img/sawblade.png');
-        myObstacle.addChild(obstacleImage);
-        obstacleImage.x = -25;
-        obstacleImage.y = -25;
-
-    }
+        function createSawBlade(x,y) {
+            var hitZoneSize = 25;
+            var damageFromObstacle = 10;
+            var myObstacle = game.createObstacle(hitZoneSize,damageFromObstacle);
+            myObstacle.x = x;
+            myObstacle.y = y;
+            game.addGameItem(myObstacle);
+            var obstacleImage = draw.bitmap('img/sawblade.png');
+            myObstacle.addChild(obstacleImage);
+            obstacleImage.x = -25;
+            obstacleImage.y = -25;
+        }
+        createSawBlade(400, (groundY-100));
+        createSawBlade(550, (groundY-30));
+        createSawBlade(700, (groundY-100));
+        createSawBlade(550, (groundY-30));
+        createSawBlade(400, (groundY-100));
+        createSawBlade(550, (groundY-30));
+        createSawBlade(700, (groundY-100));
+        createSawBlade(550, (groundY-30));
+        createSawBlade(400, (groundY-100));
+        createSawBlade(550, (groundY-30));
+        createSawBlade(700, (groundY-100));
+        createSawBlade(550, (groundY-30));
+        createSawBlade(400, (groundY-100));
+        createSawBlade(550, (groundY-30));
+        createSawBlade(700, (groundY-100));
+        createSawBlade(550, (groundY-30));
+    };
 };
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
