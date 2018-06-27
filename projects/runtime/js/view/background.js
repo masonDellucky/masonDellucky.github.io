@@ -42,7 +42,7 @@ var background = function (window) {
             
             // TODO: 3 - Add a moon and starfield
             var circle;
-            for(var i=0;i<250;i++) {
+            for(var i=0;i<100;i++) {
                 circle = draw.circle(5,'yellow','yellow',2);
                 circle.x = canvasWidth*Math.random();
                 circle.y = groundY*Math.random();
@@ -57,7 +57,7 @@ var background = function (window) {
             // TODO: 5 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             
             var building;
-            for(var i=0;i<500;++i) {
+            for(var i=0;i<250;++i) {
                 var buildingHeight = 300 * Math.random();
                 building = draw.rect((100*Math.random()),buildingHeight,'Grey','Black',1);
                 building.x = (100*i*Math.random())+100;

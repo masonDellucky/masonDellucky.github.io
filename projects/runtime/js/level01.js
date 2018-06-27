@@ -55,7 +55,7 @@ var level01 = function (window) {
             var damageFromObstacle = 0;
             var myReward = game.createObstacle(hitZoneSize, damageFromObstacle);
             myReward.x = x;
-            myReward.y = y;
+            myReward.y = y - 50;
             game.addGameItem(myReward);
             var rewardImage = draw.bitmap('img/reward.png');
             myReward.addChild(rewardImage);
@@ -66,7 +66,7 @@ var level01 = function (window) {
                 game.increaseScore(7392);
                 game.changeIntegrity(100);
             }
-        }
+        }  
         var enemy =  game.createGameItem('enemy',25);
         var redSquare = draw.rect(50,50,'red');
         redSquare.x = -25;
