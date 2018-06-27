@@ -36,14 +36,14 @@ var background = function (window) {
 
             // this fills the background with a obnoxious yellow
             // you should modify this to suit your game
-            var backgroundFill = draw.rect(canvasWidth,canvasHeight,'black');
+            var backgroundFill = draw.rect(canvasWidth,groundY,'black');
             //background.addChild(shape);
             background.addChild(backgroundFill);
             
             // TODO: 3 - Add a moon and starfield
             var circle;
-            for(var i=0;i<100;i++) {
-                circle = draw.circle(7,'yellow','yellow',2);
+            for(var i=0;i<250;i++) {
+                circle = draw.circle(5,'yellow','yellow',2);
                 circle.x = canvasWidth*Math.random();
                 circle.y = groundY*Math.random();
                 background.addChild(circle);
@@ -51,16 +51,16 @@ var background = function (window) {
             var moon = draw.bitmap('img/moon.png');
             moon.x = canvas.width/2;
             moon.y = 25;
-            moon.scaleX = 1.0;
-            moon.scaleY = 1.0;
+            moon.scaleX = 0.75;
+            moon.scaleY = 0.75;
             background.addChild(moon);
             // TODO: 5 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             
             var building;
-            for(var i=0;i<100;++i) {
+            for(var i=0;i<500;++i) {
                 var buildingHeight = 300 * Math.random();
                 building = draw.rect((100*Math.random()),buildingHeight,'Grey','Black',1);
-                building.x = 200*i*Math.random();
+                building.x = (100*i*Math.random())+100;
                 building.y = groundY-buildingHeight;
                 background.addChild(building);
                 buildings.push(building);
@@ -90,9 +90,8 @@ var background = function (window) {
             }
             
             // TODO 5: Part 2 - Parallax
-            for(var i = 0; i < 500; i++) {
-              buildings[i].x = buildings[i].x - 1;
-             
+            for(var i = 0; i < (buildings.length); i++) {
+              buildings[i].x -= 1;
               if(buildings[i].x < -200) {
                   buildings[i].x = canvasWidth;
               }

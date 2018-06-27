@@ -18,7 +18,7 @@
             _objects = []; 
         
         function makeProjectile() {
-            var projectile = _.extend(draw.circle(5, '#FE1EFE'), physikz.makeBody('projectile'));
+            var projectile = _.extend(draw.circle(150, '#21daff', '#001dff'), physikz.makeBody('projectile'));
             
             // TODO : get from settings JSON //
             projectile.volatility = 10;
@@ -80,7 +80,7 @@
                 projectile.x = projectilePoint.x;
                 projectile.y = projectilePoint.y;
                 
-                createjs.Tween.get(projectile, {override: true}).wait(500).to({alpha: 0, scaleX: 0.1, scaleY: 0.1}, 1000, createjs.Ease.linear).call(onTweenComplete);
+                createjs.Tween.get(projectile, {override: true}).wait(7500).to({alpha: 0, scaleX: 0.1, scaleY: 0.1}, 1000, createjs.Ease.linear).call(onTweenComplete);
                 
                 view.addChild(projectile);
                 space.push(projectile);

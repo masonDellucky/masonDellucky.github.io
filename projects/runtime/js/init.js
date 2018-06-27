@@ -24,7 +24,7 @@ var init = function (window) {
         playerManager, 
         particleManager;
     
-    var debugHalleHitZones = true;
+    var debugHalleHitZones = false;
     
     window.hud = hud;
     space = app.space;
@@ -38,7 +38,7 @@ var init = function (window) {
     
     var help = draw.textfield('MOVES || w: jump | e: flying jump | s: duck duck goose | space: fire it up | q: yo momma fat!', 
         '20px Arial',
-        '#ccc', 'left');
+        'black', 'left');
     help.x = 10;
     help.y = ground.y + ground.getBounds().height + 10;
     view.addChild(help);
